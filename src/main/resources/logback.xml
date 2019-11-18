@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+	<jmxConfigurator />
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%-5level %d{HH:mm:ss.SSS} [%thread - %X{deviceName}] %logger{36}.%M:%L - %msg%n</pattern><!-- <pattern>%d{HH:mm:ss.SSS} 
+				[%thread] %-5level %logger{36}.%method %X{deviceName} - %msg%n</pattern> --><!--<Pattern>%X{deviceName} 
+				- %m%n</Pattern> -->
+		</layout>
+	</appender>
+
+	<logger name="jacorb" level="ERROR" />
+	<logger name="net.sf.ehcache" level="ERROR" />
+	<logger name="org.tango" level="ERROR" />
+	<logger name="org.tango.test" level="DEBUG" />
+    <logger name="TangoClientRequests" level="ERROR"/>	
+	
+	<root level="DEBUG">
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</configuration>
